@@ -43,9 +43,11 @@ struct RequestURL {
             urlstr = baseURL + "/index.html"
         }
         
-//        if true {
-//            urlstr = "https://hookb.in/2qxyN2XnyNF9BBKGpqlP"
-//        }
+        if let url = FeatureFlagBrowserData().hookbin() {
+            if requestType == .post {
+                urlstr = url
+            }
+        }
         
         print("URL: ",urlstr, requestType.rawValue)
         

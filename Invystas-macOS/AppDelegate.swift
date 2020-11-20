@@ -15,8 +15,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first else { return }
+        print("URL",url.absoluteString)
         guard let browserData = process(url) else { return }
-        
+        print("BrowserData",browserData.see)
         launchViewController(browserData)
     }
     
@@ -45,7 +46,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let storyboardName = "Main"
         let storyboard = NSStoryboard(name: storyboardName, bundle: Bundle.main)
         vc = storyboard.instantiateController(withIdentifier: storyboardId) as? ViewController
-        vc?.browserData = browserData
+        
+        if let mockBrowserData = FeatureFlagBrowserData().check() as? BrowserData {
+            vc?.browserData = mockBrowserData
+        } else {
+            vc?.browserData = browserData
+        }
         
         let windowSize = NSSize(width: 480, height: 480)
         let screenSize = NSScreen.main?.frame.size ?? .zero

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
+		01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835527256877CD00F1D868 /* FeatureFlags.swift */; };
+		0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */; };
+		0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552D2568791D00F1D868 /* CustomIdentifier.swift */; };
+		018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355302568794300F1D868 /* FirstTimeInstallationIdentifier.swift */; };
+		018355352568797300F1D868 /* DeviceModelIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355342568797300F1D868 /* DeviceModelIdentifier.swift */; };
+		0183553925687BD000F1D868 /* MacSerialNumberIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */; };
+		0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */; };
+		018355412568821200F1D868 /* HostIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355402568821200F1D868 /* HostIdentifier.swift */; };
 		01B564C6256867C700D77C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B564C5256867C700D77C0C /* Main.storyboard */; };
 		01C2F0712550942300F70488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0702550942300F70488 /* AppDelegate.swift */; };
 		01C2F0732550942300F70488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0722550942300F70488 /* ViewController.swift */; };
@@ -20,6 +28,14 @@
 
 /* Begin PBXFileReference section */
 		011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPlatformExpertDeviceIdentifier.swift; sourceTree = "<group>"; };
+		01835527256877CD00F1D868 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureFlag+BrowserData.swift"; sourceTree = "<group>"; };
+		0183552D2568791D00F1D868 /* CustomIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIdentifier.swift; sourceTree = "<group>"; };
+		018355302568794300F1D868 /* FirstTimeInstallationIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeInstallationIdentifier.swift; sourceTree = "<group>"; };
+		018355342568797300F1D868 /* DeviceModelIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModelIdentifier.swift; sourceTree = "<group>"; };
+		0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSerialNumberIdentifier.swift; sourceTree = "<group>"; };
+		0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
+		018355402568821200F1D868 /* HostIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostIdentifier.swift; sourceTree = "<group>"; };
 		01B564C5256867C700D77C0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01C2F06D2550942300F70488 /* Invystas-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Invystas-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2F0702550942300F70488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +60,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		018355212568778C00F1D868 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01D4DFAA2550956D004B2F51 /* BrowserData.swift */,
+				01D4DFA425509548004B2F51 /* RequestURL.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		018355232568779C00F1D868 /* Identifiers */ = {
+			isa = PBXGroup;
+			children = (
+				01835525256877A200F1D868 /* IdentifierManager */,
+				0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */,
+				0183552D2568791D00F1D868 /* CustomIdentifier.swift */,
+				018355342568797300F1D868 /* DeviceModelIdentifier.swift */,
+				018355302568794300F1D868 /* FirstTimeInstallationIdentifier.swift */,
+				018355402568821200F1D868 /* HostIdentifier.swift */,
+				011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */,
+				0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */,
+			);
+			path = Identifiers;
+			sourceTree = "<group>";
+		};
+		01835525256877A200F1D868 /* IdentifierManager */ = {
+			isa = PBXGroup;
+			children = (
+				01D4DFA72550955F004B2F51 /* IdentifierManager.swift */,
+			);
+			path = IdentifierManager;
+			sourceTree = "<group>";
+		};
 		01C2F0642550942300F70488 = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +113,11 @@
 			children = (
 				01C2F0702550942300F70488 /* AppDelegate.swift */,
 				01D4DFA12550952B004B2F51 /* NetworkManager.swift */,
-				01D4DFA72550955F004B2F51 /* IdentifierManager.swift */,
-				011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */,
-				01D4DFAA2550956D004B2F51 /* BrowserData.swift */,
-				01D4DFA425509548004B2F51 /* RequestURL.swift */,
 				01C2F0722550942300F70488 /* ViewController.swift */,
+				01835527256877CD00F1D868 /* FeatureFlags.swift */,
+				0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */,
+				018355232568779C00F1D868 /* Identifiers */,
+				018355212568778C00F1D868 /* Model */,
 				01B564C5256867C700D77C0C /* Main.storyboard */,
 				01C2F0742550942400F70488 /* Assets.xcassets */,
 				01C2F0792550942400F70488 /* Info.plist */,
@@ -148,12 +196,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D4DFAB2550956D004B2F51 /* BrowserData.swift in Sources */,
+				0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */,
 				01D4DFA22550952B004B2F51 /* NetworkManager.swift in Sources */,
 				01D4DFA82550955F004B2F51 /* IdentifierManager.swift in Sources */,
 				01C2F0732550942300F70488 /* ViewController.swift in Sources */,
+				0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */,
 				01C2F0712550942300F70488 /* AppDelegate.swift in Sources */,
 				011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */,
+				01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */,
+				0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */,
+				018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */,
+				018355352568797300F1D868 /* DeviceModelIdentifier.swift in Sources */,
 				01D4DFA525509548004B2F51 /* RequestURL.swift in Sources */,
+				018355412568821200F1D868 /* HostIdentifier.swift in Sources */,
+				0183553925687BD000F1D868 /* MacSerialNumberIdentifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

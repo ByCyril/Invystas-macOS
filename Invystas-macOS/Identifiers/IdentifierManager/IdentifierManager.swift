@@ -35,7 +35,13 @@ final class IdentifierManager: Identifier {
     init(_ browserData: BrowserData) {
         
         self.browserData = browserData
-        sources = []
+        sources = [AccessibilityIdentifier(),
+                   CustomIdentifier(),
+                   DeviceModelIdentifier(),
+                   FirstTimeInstallationIdentifier(),
+                   HostIdentifier(),
+                   IOPlatformExpertDeviceIdentifier(),
+                   MacSerialNumberIdentifier()]
         
         super.init()
         compiledSources = compileSources()
