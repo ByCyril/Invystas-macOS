@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
+		01B564C6256867C700D77C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B564C5256867C700D77C0C /* Main.storyboard */; };
 		01C2F0712550942300F70488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0702550942300F70488 /* AppDelegate.swift */; };
 		01C2F0732550942300F70488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0722550942300F70488 /* ViewController.swift */; };
 		01C2F0752550942400F70488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C2F0742550942400F70488 /* Assets.xcassets */; };
-		01C2F0782550942400F70488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C2F0762550942400F70488 /* Main.storyboard */; };
 		01D4DFA22550952B004B2F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA12550952B004B2F51 /* NetworkManager.swift */; };
 		01D4DFA525509548004B2F51 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA425509548004B2F51 /* RequestURL.swift */; };
 		01D4DFA82550955F004B2F51 /* IdentifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA72550955F004B2F51 /* IdentifierManager.swift */; };
@@ -20,11 +20,11 @@
 
 /* Begin PBXFileReference section */
 		011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPlatformExpertDeviceIdentifier.swift; sourceTree = "<group>"; };
+		01B564C5256867C700D77C0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01C2F06D2550942300F70488 /* Invystas-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Invystas-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2F0702550942300F70488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C2F0722550942300F70488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01C2F0742550942400F70488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		01C2F0772550942400F70488 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01C2F0792550942400F70488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C2F07A2550942400F70488 /* Invystas_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Invystas_macOS.entitlements; sourceTree = "<group>"; };
 		01D4DFA12550952B004B2F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 				01D4DFAA2550956D004B2F51 /* BrowserData.swift */,
 				01D4DFA425509548004B2F51 /* RequestURL.swift */,
 				01C2F0722550942300F70488 /* ViewController.swift */,
+				01B564C5256867C700D77C0C /* Main.storyboard */,
 				01C2F0742550942400F70488 /* Assets.xcassets */,
-				01C2F0762550942400F70488 /* Main.storyboard */,
 				01C2F0792550942400F70488 /* Info.plist */,
 				01C2F07A2550942400F70488 /* Invystas_macOS.entitlements */,
 			);
@@ -136,7 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01C2F0752550942400F70488 /* Assets.xcassets in Resources */,
-				01C2F0782550942400F70488 /* Main.storyboard in Resources */,
+				01B564C6256867C700D77C0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,17 +158,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		01C2F0762550942400F70488 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01C2F0772550942400F70488 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01C2F07B2550942400F70488 /* Debug */ = {

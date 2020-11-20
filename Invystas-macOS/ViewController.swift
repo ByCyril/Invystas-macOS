@@ -12,25 +12,34 @@ class ViewController: NSViewController {
     var identifierManager: IdentifierManager?
     var networkManager: NetworkManager?
     
+    var browserData: BrowserData?
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        print("Blank")
+    }
+    
+    init(_ browserData: BrowserData) {
+        super.init(nibName: nil, bundle: nil)
+        self.browserData = browserData
+        print("Here")
+        print("view",view)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        self.view = NSView(frame: NSRect(x: 0, y: 0,
+                                         width: 480,
+                                         height: 480))
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let browserData = BrowserData(action: "log", encData: "encData", magic: "magicVal")
-        identifierManager = IdentifierManager(browserData)
-   
-        networkManager = NetworkManager()
-        
-        let requestURL = RequestURL(requestType: .post, browserData: browserData)
-        networkManager?.call(requestURL, completion: { (data, response, error) in
-            print("Error",error?.localizedDescription)
-            guard let res = response as? HTTPURLResponse else { return }
-            print("Res",res)
-            if let xacid = res.allHeaderFields["X-ACID"] as? String {
-                print("X-ACID",xacid)
-            } else {
-                print("Cant get X-ACID")
-            }
-        })
+        print("BrowserData",browserData?.see ?? "na")
+        print("ViewDidLoad")
     }
 
     override var representedObject: Any? {
