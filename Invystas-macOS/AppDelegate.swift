@@ -41,7 +41,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func launchViewController(_ browserData: BrowserData? = nil) {
-        vc = (browserData == nil) ? ViewController() : ViewController(browserData!)
+        let storyboardId = "ViewController"
+        let storyboardName = "Main"
+        let storyboard = NSStoryboard(name: storyboardName, bundle: Bundle.main)
+        vc = storyboard.instantiateController(withIdentifier: storyboardId) as? ViewController
+        vc?.browserData = browserData
         
         let windowSize = NSSize(width: 480, height: 480)
         let screenSize = NSScreen.main?.frame.size ?? .zero
@@ -51,7 +55,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                               windowSize.height)
         
         window = NSWindow(contentRect: rect,
-                          styleMask: [.miniaturizable, .closable, .resizable, .titled],
+                          styleMask: [.miniaturizable, .closable, .titled],
                           backing: .buffered,
                           defer: false)
         window?.title = "InvystaSafe"
