@@ -35,8 +35,8 @@ final class IdentifierManager: Identifier {
     init(_ browserData: BrowserData) {
         
         self.browserData = browserData
-        
         sources = []
+        
         super.init()
         compiledSources = compileSources()
     }
@@ -44,7 +44,7 @@ final class IdentifierManager: Identifier {
     private func compileSources() -> String {
         var param: String
         param = "caid=" + createClientAgentId()
-        param += "&magic=" + browserData.magic ?? ""
+        param += "&magic=" + browserData.magic
         
         if let otc = browserData.oneTimeCode {
             param += "&otc=" + otc
