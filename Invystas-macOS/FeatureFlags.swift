@@ -14,6 +14,6 @@ protocol FeatureFlagType {
 }
 
 final class FeatureFlag {
-    static var showDebuggingTextField: Bool = false
+    static var showDebuggingTextField: Bool = true
     static var mockSuccessLabel: Bool = false
 }

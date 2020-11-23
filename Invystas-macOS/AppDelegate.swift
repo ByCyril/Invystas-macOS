@@ -12,22 +12,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow?
     var vc: ViewController?
+    var browserData: BrowserData?
     
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first else { return }
-        print("URL",url.absoluteString)
         guard let browserData = process(url) else { return }
-        print("BrowserData",browserData.see)
-        launchViewController(browserData)
+        self.browserData = browserData
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        launchViewController()
+        launchViewController(browserData)
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
     
     func process(_ url: URL) -> BrowserData? {
@@ -41,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return BrowserData(action: data["action"]!, oneTimeCode: data["otc"], encData: data["encData"]!, magic: data["magic"]!)
     }
     
-    func launchViewController(_ browserData: BrowserData? = nil) {
+    func launchViewController(_ browserData: BrowserData?) {
         let storyboardId = "ViewController"
         let storyboardName = "Main"
         let storyboard = NSStoryboard(name: storyboardName, bundle: Bundle.main)
@@ -59,13 +57,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                               screenSize.height/2 - windowSize.height/2,
                               windowSize.width,
                               windowSize.height)
-        
+
         window = NSWindow(contentRect: rect,
                           styleMask: [.miniaturizable, .closable, .titled],
                           backing: .buffered,
                           defer: false)
+        
+        window?.acceptsMouseMovedEvents = true
+        
         window?.title = "InvystaSafe"
         window?.contentViewController = vc
+        
         window?.makeKeyAndOrderFront(nil)
 
     }

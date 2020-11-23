@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010553F02569FDF600BA2913 /* BaseViewController.swift */; };
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
 		01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835527256877CD00F1D868 /* FeatureFlags.swift */; };
 		0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */; };
@@ -16,6 +17,7 @@
 		0183553925687BD000F1D868 /* MacSerialNumberIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */; };
 		0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */; };
 		018355412568821200F1D868 /* HostIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355402568821200F1D868 /* HostIdentifier.swift */; };
+		01835555256896E300F1D868 /* Invystas_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835554256896E300F1D868 /* Invystas_macOSTests.swift */; };
 		01B564C6256867C700D77C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B564C5256867C700D77C0C /* Main.storyboard */; };
 		01C2F0712550942300F70488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0702550942300F70488 /* AppDelegate.swift */; };
 		01C2F0732550942300F70488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0722550942300F70488 /* ViewController.swift */; };
@@ -26,7 +28,18 @@
 		01D4DFAB2550956D004B2F51 /* BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFAA2550956D004B2F51 /* BrowserData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		01835557256896E300F1D868 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01C2F0652550942300F70488 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 01C2F06C2550942300F70488;
+			remoteInfo = "Invystas-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		010553F02569FDF600BA2913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPlatformExpertDeviceIdentifier.swift; sourceTree = "<group>"; };
 		01835527256877CD00F1D868 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureFlag+BrowserData.swift"; sourceTree = "<group>"; };
@@ -36,6 +49,9 @@
 		0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSerialNumberIdentifier.swift; sourceTree = "<group>"; };
 		0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		018355402568821200F1D868 /* HostIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostIdentifier.swift; sourceTree = "<group>"; };
+		01835552256896E300F1D868 /* Invystas-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Invystas-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		01835554256896E300F1D868 /* Invystas_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invystas_macOSTests.swift; sourceTree = "<group>"; };
+		01835556256896E300F1D868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B564C5256867C700D77C0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01C2F06D2550942300F70488 /* Invystas-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Invystas-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2F0702550942300F70488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0183554F256896E300F1D868 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01C2F06A2550942300F70488 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,10 +115,20 @@
 			path = IdentifierManager;
 			sourceTree = "<group>";
 		};
+		01835553256896E300F1D868 /* Invystas-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				01835554256896E300F1D868 /* Invystas_macOSTests.swift */,
+				01835556256896E300F1D868 /* Info.plist */,
+			);
+			path = "Invystas-macOSTests";
+			sourceTree = "<group>";
+		};
 		01C2F0642550942300F70488 = {
 			isa = PBXGroup;
 			children = (
 				01C2F06F2550942300F70488 /* Invystas-macOS */,
+				01835553256896E300F1D868 /* Invystas-macOSTests */,
 				01C2F06E2550942300F70488 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				01C2F06D2550942300F70488 /* Invystas-macOS.app */,
+				01835552256896E300F1D868 /* Invystas-macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +148,7 @@
 				01C2F0702550942300F70488 /* AppDelegate.swift */,
 				01D4DFA12550952B004B2F51 /* NetworkManager.swift */,
 				01C2F0722550942300F70488 /* ViewController.swift */,
+				010553F02569FDF600BA2913 /* BaseViewController.swift */,
 				01835527256877CD00F1D868 /* FeatureFlags.swift */,
 				0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */,
 				018355232568779C00F1D868 /* Identifiers */,
@@ -129,6 +164,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		01835551256896E300F1D868 /* Invystas-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 01835559256896E300F1D868 /* Build configuration list for PBXNativeTarget "Invystas-macOSTests" */;
+			buildPhases = (
+				0183554E256896E300F1D868 /* Sources */,
+				0183554F256896E300F1D868 /* Frameworks */,
+				01835550256896E300F1D868 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01835558256896E300F1D868 /* PBXTargetDependency */,
+			);
+			name = "Invystas-macOSTests";
+			productName = "Invystas-macOSTests";
+			productReference = 01835552256896E300F1D868 /* Invystas-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		01C2F06C2550942300F70488 /* Invystas-macOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01C2F07D2550942400F70488 /* Build configuration list for PBXNativeTarget "Invystas-macOS" */;
@@ -152,9 +205,13 @@
 		01C2F0652550942300F70488 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					01835551256896E300F1D868 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 01C2F06C2550942300F70488;
+					};
 					01C2F06C2550942300F70488 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -174,11 +231,19 @@
 			projectRoot = "";
 			targets = (
 				01C2F06C2550942300F70488 /* Invystas-macOS */,
+				01835551256896E300F1D868 /* Invystas-macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		01835550256896E300F1D868 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01C2F06B2550942300F70488 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,6 +256,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0183554E256896E300F1D868 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01835555256896E300F1D868 /* Invystas_macOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		01C2F0692550942300F70488 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,6 +281,7 @@
 				018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */,
 				018355352568797300F1D868 /* DeviceModelIdentifier.swift in Sources */,
 				01D4DFA525509548004B2F51 /* RequestURL.swift in Sources */,
+				010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */,
 				018355412568821200F1D868 /* HostIdentifier.swift in Sources */,
 				0183553925687BD000F1D868 /* MacSerialNumberIdentifier.swift in Sources */,
 			);
@@ -215,7 +289,57 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		01835558256896E300F1D868 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 01C2F06C2550942300F70488 /* Invystas-macOS */;
+			targetProxy = 01835557256896E300F1D868 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0183555A256896E300F1D868 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R986STKYJ7;
+				INFOPLIST_FILE = "Invystas-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ByCyril.Invystas-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invystas-macOS.app/Contents/MacOS/Invystas-macOS";
+			};
+			name = Debug;
+		};
+		0183555B256896E300F1D868 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = R986STKYJ7;
+				INFOPLIST_FILE = "Invystas-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ByCyril.Invystas-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invystas-macOS.app/Contents/MacOS/Invystas-macOS";
+			};
+			name = Release;
+		};
 		01C2F07B2550942400F70488 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -378,6 +502,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		01835559256896E300F1D868 /* Build configuration list for PBXNativeTarget "Invystas-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0183555A256896E300F1D868 /* Debug */,
+				0183555B256896E300F1D868 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		01C2F0682550942300F70488 /* Build configuration list for PBXProject "Invystas-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
