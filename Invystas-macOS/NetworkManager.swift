@@ -13,7 +13,7 @@ protocol URLSessionProtocol {
 }
 
 protocol URLSessionDataTaskProtocol {
-    var didResume: Bool { get set }
+    var didResume: Bool { get }
     func resume()
     func data(_ completion: (Data?, URLResponse?, Error?) -> Void)
 }
@@ -22,9 +22,6 @@ extension URLSessionDataTask: URLSessionDataTaskProtocol {
     var didResume: Bool {
         get {
             return false
-        }
-        set {
-            
         }
     }
     

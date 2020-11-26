@@ -12,16 +12,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow?
     var vc: ViewController?
-    var browserData: BrowserData?
     
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first else { return }
         guard let browserData = process(url) else { return }
-        self.browserData = browserData
+
+        if window == nil {
+            launchViewController()
+        }
+        
+        vc?.beginInvystaProcess(with: browserData)
+        
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        launchViewController(browserData)
+        if window == nil {
+            launchViewController()
+        }
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -38,18 +45,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         return BrowserData(action: data["action"]!, oneTimeCode: data["otc"], encData: data["encData"]!, magic: data["magic"]!)
     }
-    
-    func launchViewController(_ browserData: BrowserData?) {
+
+    func launchViewController(_ browserData: BrowserData? = nil) {
+        
         let storyboardId = "ViewController"
         let storyboardName = "Main"
         let storyboard = NSStoryboard(name: storyboardName, bundle: Bundle.main)
         vc = storyboard.instantiateController(withIdentifier: storyboardId) as? ViewController
-        
-        if let mockBrowserData = FeatureFlagBrowserData().check() as? BrowserData {
-            vc?.browserData = mockBrowserData
-        } else {
-            vc?.browserData = browserData
-        }
         
         let windowSize = NSSize(width: 480, height: 480)
         let screenSize = NSScreen.main?.frame.size ?? .zero
@@ -64,7 +66,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                           defer: false)
         
         window?.acceptsMouseMovedEvents = true
-        
         window?.title = "InvystaSafe"
         window?.contentViewController = vc
         

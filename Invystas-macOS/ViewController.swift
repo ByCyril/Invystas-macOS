@@ -8,7 +8,7 @@
 import Cocoa
 import LocalAuthentication
 
-class ViewController: BaseViewController {
+final class ViewController: BaseViewController {
         
     var identifierManager: IdentifierManager?
     var networkManager: NetworkManager?
@@ -20,16 +20,20 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let browserData = self.browserData {
-            networkManager = NetworkManager()
-            identifierManager = IdentifierManager(browserData)
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.black.cgColor
+        
+        if let browserData = browserData {
             beginInvystaProcess(with: browserData)
         }
     }
     
     //    MARK: Begin Invysta Process
-    private func beginInvystaProcess(with browserData: BrowserData) {
-        
+    func beginInvystaProcess(with browserData: BrowserData) {
+        print("Begin Invysta Process")
+        #warning("Add local authentication")
+        networkManager = NetworkManager()
+        identifierManager = IdentifierManager(browserData)    
         requestXACID(browserData)
     }
     
@@ -39,9 +43,15 @@ class ViewController: BaseViewController {
         activityIndicator.startAnimation(nil)
         
         networkManager?.call(requestURL, completion: { [weak self] (data, response, error) in
-            guard let res = response as? HTTPURLResponse else { return }
+            guard let res = response as? HTTPURLResponse else {
+                self?.response("Something went wrong. Please try again later.")
+                return
+            }
             
-            guard let xacid = res.allHeaderFields["X-ACID"] as? String else { return }
+            guard let xacid = res.allHeaderFields["X-ACID"] as? String else {
+                self?.response("Something went wrong. Please try again later.")
+                return
+            }
             
             switch browserData.callType {
             case .login:
@@ -65,14 +75,18 @@ class ViewController: BaseViewController {
         
         networkManager?.call(requestURL, completion: { [weak self] (data, response, error) in
             guard let res = response as? HTTPURLResponse else {
-                self?.activityIndicator.stopAnimation(nil)
+                self?.response("Something went wrong. Please try again later.")
                 return
             }
-            self?.networkManagerResponse(with: res)
+            if (200...299) ~= res.statusCode {
+                self?.response("Login Successful")
+            } else if res.statusCode == 401 {
+                self?.response("Login Failed. Please try again later.")
+            }
         })
     }
     
-    //    MARK: Authenticate
+    //    MARK: Register
     private func register(with xacid: String, and browserData: BrowserData) {
         let body = identifierManager?.compiledSources
         let requestURL = RequestURL(requestType: .post,
@@ -82,23 +96,15 @@ class ViewController: BaseViewController {
         
         networkManager?.call(requestURL, completion: { [weak self] (data, response, error) in
             guard let res = response as? HTTPURLResponse else {
-                self?.activityIndicator.stopAnimation(nil)
+                self?.response("Something went wrong. Please try again later.")
                 return
             }
-            self?.networkManagerResponse(with: res)
-        })
-    }
-    
-    //    MARK: Network Response
-    private func networkManagerResponse(with response: HTTPURLResponse) {
-        print("Network Response",response)
-        DispatchQueue.main.async { [weak self] in
-            self?.activityIndicator.stopAnimation(nil)
-            if (200...299) ~= response.statusCode {
-                print("Done!")
+            if (200...299) ~= res.statusCode {
+                self?.response("Successfully Registered")
+            } else if res.statusCode == 401 {
+                self?.response("Failed to Register")
             }
-        }
-        
+        })
     }
     
     override var representedObject: Any? {
@@ -107,6 +113,4 @@ class ViewController: BaseViewController {
         }
     }
     
-    
 }
-
