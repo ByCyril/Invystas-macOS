@@ -31,16 +31,34 @@ final class ViewController: BaseViewController {
     //    MARK: Begin Invysta Process
     func beginInvystaProcess(with browserData: BrowserData) {
         print("Begin Invysta Process")
-        #warning("Add local authentication")
+        
         networkManager = NetworkManager()
-        identifierManager = IdentifierManager(browserData)    
-        requestXACID(browserData)
+        identifierManager = IdentifierManager(browserData)
+        activityIndicator.startAnimation(nil)
+        
+        guard UserDefaults.standard.bool(forKey: "DeviceSecurity") else {
+            requestXACID(browserData)
+            return
+        }
+        
+        if #available(OSX 10.11, *) {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "To begin the Invysta Process") { [weak self] (success, error) in
+                
+                if success {
+                    self?.requestXACID(browserData)
+                } else {
+                    self?.response("Failed to authenticate Invysta process")
+                }
+            }
+        } else {
+            requestXACID(browserData)
+        }
+        
     }
     
     //    MARK: Request XACID
     private func requestXACID(_ browserData: BrowserData) {
         let requestURL = RequestURL(requestType: .get, browserData: browserData)
-        activityIndicator.startAnimation(nil)
         
         networkManager?.call(requestURL, completion: { [weak self] (data, response, error) in
             guard let res = response as? HTTPURLResponse else {

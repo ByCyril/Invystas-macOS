@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol FeatureFlagType {
     var trigger: Bool { get }
     func check() -> Any?
