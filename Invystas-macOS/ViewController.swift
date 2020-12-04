@@ -20,17 +20,20 @@ final class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Invysta Aware"
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.black.cgColor
         
-        if let browserData = browserData {
-            beginInvystaProcess(with: browserData)
-        }
+        guard let browserData = browserData else { return }
+        beginInvystaProcess(with: browserData)
+        
     }
     
     //    MARK: Begin Invysta Process
     func beginInvystaProcess(with browserData: BrowserData) {
         print("Begin Invysta Process")
+        
+        resultsLabel.stringValue = ""
         
         networkManager = NetworkManager()
         identifierManager = IdentifierManager(browserData)

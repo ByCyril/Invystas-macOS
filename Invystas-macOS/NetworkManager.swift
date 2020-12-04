@@ -35,30 +35,25 @@ extension URLSession: URLSessionProtocol {
 
 }
 
-protocol NetworkManagerDelegate: AnyObject {
-    func networkResponse(_ data: Data?,_ response: URLResponse?,_ error: Error?)
-}
-
 final class NetworkManager {
     
-    private var session: URLSessionProtocol?
-    weak var delegate: NetworkManagerDelegate?
+    private var session: URLSessionProtocol
     
-    init(_ session: URLSessionProtocol?) {
-        self.session = session
+    init(_ session: URLSessionProtocol? = nil) {
+        if let session = session {
+            self.session = session
+        } else {
+            let config = URLSessionConfiguration.default
+            config.urlCache = nil
+            config.urlCredentialStorage = nil
+            config.httpCookieStorage = .none
+            config.httpCookieAcceptPolicy = .never
+            self.session = URLSession(configuration: config)
+        }
     }
-    
-    init() {
-        let config = URLSessionConfiguration.default
-        config.urlCache = nil
-        config.urlCredentialStorage = nil
-        config.httpCookieStorage = .none
-        config.httpCookieAcceptPolicy = .never
-        session = URLSession(configuration: config)
-    }
-    
+   
     public func call(_ url: RequestURL, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        session?.dataTaskWithUrl(url, completion: completion).resume()
+        session.dataTaskWithUrl(url, completion: completion).resume()
     }
  
 }

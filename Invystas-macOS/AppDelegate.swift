@@ -66,11 +66,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                           defer: false)
         
         window?.acceptsMouseMovedEvents = true
-        window?.title = "InvystaSafe"
+        window?.title = "Invysta Aware"
         window?.contentViewController = vc
         
         window?.makeKeyAndOrderFront(nil)
 
+    }
+    
+    var preferencesController: NSWindowController?
+    
+    @IBAction func showPreferences(_ sender: Any) {
+        
+        if let preferencesController = preferencesController {
+            preferencesController.showWindow(sender)
+        } else {
+            let name = NSStoryboard.Name("Preferences")
+            let storyboard = NSStoryboard(name: name, bundle: nil)
+            preferencesController = storyboard.instantiateInitialController() as? NSWindowController
+            
+            preferencesController?.showWindow(sender)
+        }
+            
+    }
+    
+    @IBAction func showHelpPage(_ sender: Any) {
+        let url = URL(string: "https://invysta.com/support/")!
+        if NSWorkspace.shared.open(url) {
+            print("default browser was successfully opened")
+        }
     }
     
 }
