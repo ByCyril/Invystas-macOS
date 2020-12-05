@@ -23,7 +23,7 @@ final class ViewController: BaseViewController {
         title = "Invysta Aware"
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.black.cgColor
-        
+
         guard let browserData = browserData else { return }
         beginInvystaProcess(with: browserData)
         
@@ -100,7 +100,7 @@ final class ViewController: BaseViewController {
                 return
             }
             if (200...299) ~= res.statusCode {
-                self?.response("Login Successful")
+                self?.response("Successfully Logged In!")
             } else if res.statusCode == 401 {
                 self?.response("Login Failed. Please try again later.")
             }

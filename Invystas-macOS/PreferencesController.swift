@@ -10,6 +10,7 @@ import Cocoa
 final class PreferencesController: NSViewController {
     
     @IBOutlet weak var deviceSecurityToggle: NSButton!
+    @IBOutlet weak var versionLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,8 @@ final class PreferencesController: NSViewController {
         let isEnabled = UserDefaults.standard.bool(forKey: "DeviceSecurity")
         deviceSecurityToggle.state = (isEnabled) ? .on : .off
         
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        versionLabel.stringValue = appVersion ?? "NA"
     }
     
     @IBAction func openPrivacyPolicy(_ sender: NSButton) {

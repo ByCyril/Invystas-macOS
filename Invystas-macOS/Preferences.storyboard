@@ -135,6 +135,7 @@
                     </view>
                     <connections>
                         <outlet property="deviceSecurityToggle" destination="Zh6-SF-uI3" id="wqT-uW-iED"/>
+                        <outlet property="versionLabel" destination="lRe-Sl-k7X" id="RcL-6S-TWN"/>
                     </connections>
                 </viewController>
                 <customObject id="ODl-1B-ejz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
