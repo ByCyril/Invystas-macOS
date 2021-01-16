@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010553F02569FDF600BA2913 /* BaseViewController.swift */; };
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
+		01674F5625B38FFD002B9724 /* Invysta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01674F5325B38E86002B9724 /* Invysta.storyboard */; };
 		01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835527256877CD00F1D868 /* FeatureFlags.swift */; };
 		0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */; };
 		0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552D2568791D00F1D868 /* CustomIdentifier.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		010553F02569FDF600BA2913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPlatformExpertDeviceIdentifier.swift; sourceTree = "<group>"; };
+		01674F5325B38E86002B9724 /* Invysta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invysta.storyboard; sourceTree = "<group>"; };
 		01835527256877CD00F1D868 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureFlag+BrowserData.swift"; sourceTree = "<group>"; };
 		0183552D2568791D00F1D868 /* CustomIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIdentifier.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				01835527256877CD00F1D868 /* FeatureFlags.swift */,
 				0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */,
 				01ABBF54257AC06C0045B5D7 /* Preferences.storyboard */,
+				01674F5325B38E86002B9724 /* Invysta.storyboard */,
 				01B564C5256867C700D77C0C /* Main.storyboard */,
 				01ABBF5E257ACCEE0045B5D7 /* PreferencesController.swift */,
 				018355232568779C00F1D868 /* Identifiers */,
@@ -261,6 +264,7 @@
 				01ABBF57257AC4EE0045B5D7 /* Preferences.storyboard in Resources */,
 				01C2F0752550942400F70488 /* Assets.xcassets in Resources */,
 				01B564C6256867C700D77C0C /* Main.storyboard in Resources */,
+				01674F5625B38FFD002B9724 /* Invysta.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

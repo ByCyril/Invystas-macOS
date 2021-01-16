@@ -10,14 +10,16 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var mainWindowController: NSWindowController?
+    var invystaController: NSWindowController?
     var preferencesController: NSWindowController?
     
     var window: NSWindow?
     var vc: ViewController?
     
     func applicationDidFinishLaunching(_ notification: Notification) {
-        launchViewController()
+        if vc == nil {
+            launchViewController()
+        }
     }
     
     func application(_ application: NSApplication, open urls: [URL]) {
@@ -29,10 +31,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         vc?.beginInvystaProcess(with: browserData)
         
-    }
-    
-    func applicationWillFinishLaunching(_ notification: Notification) {
-        launchViewController()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -54,15 +52,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func launchViewController() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Invysta"), bundle: nil)
+        invystaController = storyboard.instantiateController(withIdentifier: "InvystaWindow") as? NSWindowController
 
-//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-//        mainWindowController = storyboard.instantiateController(withIdentifier: "Main") as? NSWindowController
-//        mainWindowController?.showWindow(self)
-        
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil)
-        preferencesController = storyboard.instantiateInitialController() as? NSWindowController
-        preferencesController?.showWindow(self)
-        
+        vc = storyboard.instantiateController(withIdentifier: "ViewController") as? ViewController
+
+        invystaController?.contentViewController = vc
+        invystaController?.showWindow(self)
+
     }
     
     @IBAction func showPreferences(_ sender: Any) {

@@ -14,25 +14,22 @@ final class ViewController: BaseViewController {
     var networkManager: NetworkManager?
     var browserData: BrowserData?
     
-    let context = LAContext()
-    var error: NSError?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Invysta Aware"
         view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.black.cgColor
-
+        view.layer?.backgroundColor = NSColor.green.cgColor
+        
         guard let browserData = browserData else { return }
         beginInvystaProcess(with: browserData)
-        
     }
     
     //    MARK: Begin Invysta Process
     func beginInvystaProcess(with browserData: BrowserData) {
         print("Begin Invysta Process")
         
+        view.layer?.backgroundColor = NSColor.gray.cgColor
         resultsLabel.stringValue = ""
         
         networkManager = NetworkManager()
@@ -44,19 +41,7 @@ final class ViewController: BaseViewController {
             return
         }
         
-        if #available(OSX 10.11, *) {
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "To begin the Invysta Process") { [weak self] (success, error) in
-                
-                if success {
-                    self?.requestXACID(browserData)
-                } else {
-                    self?.response("Failed to authenticate Invysta process")
-                }
-            }
-        } else {
-            requestXACID(browserData)
-        }
-        
+        requestXACID(browserData)
     }
     
     //    MARK: Request XACID
@@ -127,11 +112,5 @@ final class ViewController: BaseViewController {
             }
         })
     }
-    
-    override var representedObject: Any? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-    
+
 }
