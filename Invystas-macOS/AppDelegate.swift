@@ -10,25 +10,29 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    var mainWindowController: NSWindowController?
+    var preferencesController: NSWindowController?
+    
     var window: NSWindow?
     var vc: ViewController?
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        launchViewController()
+    }
     
     func application(_ application: NSApplication, open urls: [URL]) {
         guard let url = urls.first else { return }
         guard let browserData = process(url) else { return }
-
-        if window == nil {
+        
+        if vc == nil {
             launchViewController()
         }
-        
         vc?.beginInvystaProcess(with: browserData)
         
     }
     
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if window == nil {
-            launchViewController()
-        }
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        launchViewController()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
@@ -43,48 +47,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             data[component.name] = component.value
         }
         
-        return BrowserData(action: data["action"]!, oneTimeCode: data["otc"], encData: data["encData"]!, magic: data["magic"]!)
+        return BrowserData(action: data["action"]!,
+                           oneTimeCode: data["otc"],
+                           encData: data["encData"]!,
+                           magic: data["magic"]!)
     }
 
-    func launchViewController(_ browserData: BrowserData? = nil) {
-        
-        let storyboardId = "ViewController"
-        let storyboardName = "Main"
-        let storyboard = NSStoryboard(name: storyboardName, bundle: Bundle.main)
-        vc = storyboard.instantiateController(withIdentifier: storyboardId) as? ViewController
-        
-        let windowSize = NSSize(width: 480, height: 480)
-        let screenSize = NSScreen.main?.frame.size ?? .zero
-        let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2,
-                              screenSize.height/2 - windowSize.height/2,
-                              windowSize.width,
-                              windowSize.height)
+    func launchViewController() {
 
-        window = NSWindow(contentRect: rect,
-                          styleMask: [.miniaturizable, .closable, .titled],
-                          backing: .buffered,
-                          defer: false)
+//        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+//        mainWindowController = storyboard.instantiateController(withIdentifier: "Main") as? NSWindowController
+//        mainWindowController?.showWindow(self)
         
-        window?.acceptsMouseMovedEvents = true
-        window?.title = "Invysta Aware"
-        window?.contentViewController = vc
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil)
+        preferencesController = storyboard.instantiateInitialController() as? NSWindowController
+        preferencesController?.showWindow(self)
         
-        window?.makeKeyAndOrderFront(nil)
-
     }
-    
-    var preferencesController: NSWindowController?
     
     @IBAction func showPreferences(_ sender: Any) {
         
         if let preferencesController = preferencesController {
             preferencesController.showWindow(sender)
         } else {
-            let name = NSStoryboard.Name("Preferences")
-            let storyboard = NSStoryboard(name: name, bundle: nil)
+
+            let storyboard = NSStoryboard(name: NSStoryboard.Name("Preferences"), bundle: nil)
             preferencesController = storyboard.instantiateInitialController() as? NSWindowController
-            
             preferencesController?.showWindow(sender)
+ 
         }
             
     }
