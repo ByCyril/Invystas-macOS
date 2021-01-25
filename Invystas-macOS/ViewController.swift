@@ -9,7 +9,7 @@ import Cocoa
 import LocalAuthentication
 
 final class ViewController: BaseViewController {
-        
+    
     var identifierManager: IdentifierManager?
     var networkManager: NetworkManager?
     var browserData: BrowserData?
@@ -29,7 +29,6 @@ final class ViewController: BaseViewController {
     func beginInvystaProcess(with browserData: BrowserData) {
         print("Begin Invysta Process")
         
-        view.layer?.backgroundColor = NSColor.gray.cgColor
         resultsLabel.stringValue = ""
         
         networkManager = NetworkManager()
@@ -112,5 +111,5 @@ final class ViewController: BaseViewController {
             }
         })
     }
-
+    
 }
