@@ -3,15 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010553F02569FDF600BA2913 /* BaseViewController.swift */; };
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
+		0162F27A26111B9D000F5D41 /* Invysta-Framework in Frameworks */ = {isa = PBXBuildFile; productRef = 0162F27926111B9D000F5D41 /* Invysta-Framework */; };
+		0162F28026112512000F5D41 /* IVUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F27F26112512000F5D41 /* IVUserDefaults.swift */; };
+		0162F28A261132C2000F5D41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F289261132C2000F5D41 /* RegisterViewController.swift */; };
+		0162F29C26115CC3000F5D41 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F29B26115CC3000F5D41 /* main.swift */; };
+		0162F2A4261177A2000F5D41 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F2A3261177A2000F5D41 /* AuthenticationViewController.swift */; };
 		01674F5625B38FFD002B9724 /* Invysta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01674F5325B38E86002B9724 /* Invysta.storyboard */; };
-		01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835527256877CD00F1D868 /* FeatureFlags.swift */; };
-		0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */; };
 		0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183552D2568791D00F1D868 /* CustomIdentifier.swift */; };
 		018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355302568794300F1D868 /* FirstTimeInstallationIdentifier.swift */; };
 		018355352568797300F1D868 /* DeviceModelIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355342568797300F1D868 /* DeviceModelIdentifier.swift */; };
@@ -19,16 +22,10 @@
 		0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */; };
 		018355412568821200F1D868 /* HostIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018355402568821200F1D868 /* HostIdentifier.swift */; };
 		01835555256896E300F1D868 /* Invystas_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01835554256896E300F1D868 /* Invystas_macOSTests.swift */; };
-		01ABBF57257AC4EE0045B5D7 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01ABBF54257AC06C0045B5D7 /* Preferences.storyboard */; };
 		01ABBF5F257ACCF00045B5D7 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01ABBF5E257ACCEE0045B5D7 /* PreferencesController.swift */; };
-		01B564C6256867C700D77C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B564C5256867C700D77C0C /* Main.storyboard */; };
 		01C2F0712550942300F70488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0702550942300F70488 /* AppDelegate.swift */; };
 		01C2F0732550942300F70488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0722550942300F70488 /* ViewController.swift */; };
 		01C2F0752550942400F70488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C2F0742550942400F70488 /* Assets.xcassets */; };
-		01D4DFA22550952B004B2F51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA12550952B004B2F51 /* NetworkManager.swift */; };
-		01D4DFA525509548004B2F51 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA425509548004B2F51 /* RequestURL.swift */; };
-		01D4DFA82550955F004B2F51 /* IdentifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFA72550955F004B2F51 /* IdentifierManager.swift */; };
-		01D4DFAB2550956D004B2F51 /* BrowserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4DFAA2550956D004B2F51 /* BrowserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +41,11 @@
 /* Begin PBXFileReference section */
 		010553F02569FDF600BA2913 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOPlatformExpertDeviceIdentifier.swift; sourceTree = "<group>"; };
+		0162F27F26112512000F5D41 /* IVUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVUserDefaults.swift; sourceTree = "<group>"; };
+		0162F289261132C2000F5D41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0162F29B26115CC3000F5D41 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		0162F2A3261177A2000F5D41 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		01674F5325B38E86002B9724 /* Invysta.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invysta.storyboard; sourceTree = "<group>"; };
-		01835527256877CD00F1D868 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
-		0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureFlag+BrowserData.swift"; sourceTree = "<group>"; };
 		0183552D2568791D00F1D868 /* CustomIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIdentifier.swift; sourceTree = "<group>"; };
 		018355302568794300F1D868 /* FirstTimeInstallationIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeInstallationIdentifier.swift; sourceTree = "<group>"; };
 		018355342568797300F1D868 /* DeviceModelIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModelIdentifier.swift; sourceTree = "<group>"; };
@@ -56,19 +55,13 @@
 		01835552256896E300F1D868 /* Invystas-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Invystas-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01835554256896E300F1D868 /* Invystas_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invystas_macOSTests.swift; sourceTree = "<group>"; };
 		01835556256896E300F1D868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01ABBF54257AC06C0045B5D7 /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
 		01ABBF5E257ACCEE0045B5D7 /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
-		01B564C5256867C700D77C0C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		01C2F06D2550942300F70488 /* Invysta Aware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Invysta Aware.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2F0702550942300F70488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C2F0722550942300F70488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01C2F0742550942400F70488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C2F0792550942400F70488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C2F07A2550942400F70488 /* Invystas_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Invystas_macOS.entitlements; sourceTree = "<group>"; };
-		01D4DFA12550952B004B2F51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		01D4DFA425509548004B2F51 /* RequestURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
-		01D4DFA72550955F004B2F51 /* IdentifierManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentifierManager.swift; sourceTree = "<group>"; };
-		01D4DFAA2550956D004B2F51 /* BrowserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,25 +76,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0162F27A26111B9D000F5D41 /* Invysta-Framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		018355212568778C00F1D868 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				01D4DFAA2550956D004B2F51 /* BrowserData.swift */,
-				01D4DFA425509548004B2F51 /* RequestURL.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		018355232568779C00F1D868 /* Identifiers */ = {
 			isa = PBXGroup;
 			children = (
-				01835525256877A200F1D868 /* IdentifierManager */,
 				0183553D25687E1200F1D868 /* AccessibilityIdentifier.swift */,
 				0183552D2568791D00F1D868 /* CustomIdentifier.swift */,
 				018355342568797300F1D868 /* DeviceModelIdentifier.swift */,
@@ -111,14 +95,6 @@
 				0183553825687BD000F1D868 /* MacSerialNumberIdentifier.swift */,
 			);
 			path = Identifiers;
-			sourceTree = "<group>";
-		};
-		01835525256877A200F1D868 /* IdentifierManager */ = {
-			isa = PBXGroup;
-			children = (
-				01D4DFA72550955F004B2F51 /* IdentifierManager.swift */,
-			);
-			path = IdentifierManager;
 			sourceTree = "<group>";
 		};
 		01835553256896E300F1D868 /* Invystas-macOSTests */ = {
@@ -151,18 +127,16 @@
 		01C2F06F2550942300F70488 /* Invystas-macOS */ = {
 			isa = PBXGroup;
 			children = (
+				0162F29B26115CC3000F5D41 /* main.swift */,
 				01C2F0702550942300F70488 /* AppDelegate.swift */,
-				01D4DFA12550952B004B2F51 /* NetworkManager.swift */,
 				01C2F0722550942300F70488 /* ViewController.swift */,
 				010553F02569FDF600BA2913 /* BaseViewController.swift */,
-				01835527256877CD00F1D868 /* FeatureFlags.swift */,
-				0183552A256877FB00F1D868 /* FeatureFlag+BrowserData.swift */,
-				01ABBF54257AC06C0045B5D7 /* Preferences.storyboard */,
+				0162F289261132C2000F5D41 /* RegisterViewController.swift */,
+				0162F2A3261177A2000F5D41 /* AuthenticationViewController.swift */,
+				0162F27F26112512000F5D41 /* IVUserDefaults.swift */,
 				01674F5325B38E86002B9724 /* Invysta.storyboard */,
-				01B564C5256867C700D77C0C /* Main.storyboard */,
 				01ABBF5E257ACCEE0045B5D7 /* PreferencesController.swift */,
 				018355232568779C00F1D868 /* Identifiers */,
-				018355212568778C00F1D868 /* Model */,
 				01C2F0742550942400F70488 /* Assets.xcassets */,
 				01C2F0792550942400F70488 /* Info.plist */,
 				01C2F07A2550942400F70488 /* Invystas_macOS.entitlements */,
@@ -204,6 +178,9 @@
 			dependencies = (
 			);
 			name = "Invysta Aware";
+			packageProductDependencies = (
+				0162F27926111B9D000F5D41 /* Invysta-Framework */,
+			);
 			productName = "Invystas-macOS";
 			productReference = 01C2F06D2550942300F70488 /* Invysta Aware.app */;
 			productType = "com.apple.product-type.application";
@@ -239,6 +216,9 @@
 				Base,
 			);
 			mainGroup = 01C2F0642550942300F70488;
+			packageReferences = (
+				0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */,
+			);
 			productRefGroup = 01C2F06E2550942300F70488 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,9 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01ABBF57257AC4EE0045B5D7 /* Preferences.storyboard in Resources */,
 				01C2F0752550942400F70488 /* Assets.xcassets in Resources */,
-				01B564C6256867C700D77C0C /* Main.storyboard in Resources */,
 				01674F5625B38FFD002B9724 /* Invysta.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,20 +261,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D4DFAB2550956D004B2F51 /* BrowserData.swift in Sources */,
 				0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */,
-				01D4DFA22550952B004B2F51 /* NetworkManager.swift in Sources */,
-				01D4DFA82550955F004B2F51 /* IdentifierManager.swift in Sources */,
+				0162F28026112512000F5D41 /* IVUserDefaults.swift in Sources */,
 				01C2F0732550942300F70488 /* ViewController.swift in Sources */,
 				01ABBF5F257ACCF00045B5D7 /* PreferencesController.swift in Sources */,
-				0183552B256877FB00F1D868 /* FeatureFlag+BrowserData.swift in Sources */,
 				01C2F0712550942300F70488 /* AppDelegate.swift in Sources */,
 				011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */,
-				01835528256877CD00F1D868 /* FeatureFlags.swift in Sources */,
 				0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */,
+				0162F2A4261177A2000F5D41 /* AuthenticationViewController.swift in Sources */,
 				018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */,
+				0162F28A261132C2000F5D41 /* RegisterViewController.swift in Sources */,
 				018355352568797300F1D868 /* DeviceModelIdentifier.swift in Sources */,
-				01D4DFA525509548004B2F51 /* RequestURL.swift in Sources */,
+				0162F29C26115CC3000F5D41 /* main.swift in Sources */,
 				010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */,
 				018355412568821200F1D868 /* HostIdentifier.swift in Sources */,
 				0183553925687BD000F1D868 /* MacSerialNumberIdentifier.swift in Sources */,
@@ -322,7 +298,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				INFOPLIST_FILE = "Invystas-macOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ByCyril.Invystas-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,7 +319,11 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				INFOPLIST_FILE = "Invystas-macOSTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ByCyril.Invystas-macOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,7 +442,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -475,9 +460,12 @@
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Invystas-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.0.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAwareI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -497,9 +485,12 @@
 				DEVELOPMENT_TEAM = R986STKYJ7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Invystas-macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				MARKETING_VERSION = 1.0.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAwareI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -537,6 +528,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cgarcia090/Invysta-Framework.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0162F27926111B9D000F5D41 /* Invysta-Framework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */;
+			productName = "Invysta-Framework";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 01C2F0652550942300F70488 /* Project object */;
 }

@@ -6,8 +6,9 @@
 //
 
 import Cocoa
+import Invysta_Framework
 
-final class AccessibilityIdentifier: Identifier, IdentifierSource {
+struct AccessibilityIdentifier: IdentifierSource {
     var type: String = "AccessibilityIdentifier"
     
     let fontAttributes: String = {
@@ -15,7 +16,9 @@ final class AccessibilityIdentifier: Identifier, IdentifierSource {
         let fontName = NSAccessibility.FontAttributeKey.fontName.rawValue
         let fontSize = NSAccessibility.FontAttributeKey.fontSize.rawValue
         let visibleName = NSAccessibility.FontAttributeKey.visibleName.rawValue
-        return fontFamily + fontName + fontSize + visibleName
+//        return fontFamily + fontName + fontSize + visibleName
+        InvystaService.log(.alert, "AccessibilityIdentifier",fontFamily + fontName + fontSize + visibleName)
+        return UUID().uuidString
     }()
     
     func identifier() -> String? {

@@ -6,8 +6,9 @@
 //
 
 import Cocoa
+import Invysta_Framework
 
-final class FirstTimeInstallationIdentifier: Identifier, IdentifierSource {
+struct FirstTimeInstallationIdentifier: IdentifierSource {
     var type: String = "FirstTimeInstallation"
     
     func identifier() -> String? {
@@ -15,7 +16,9 @@ final class FirstTimeInstallationIdentifier: Identifier, IdentifierSource {
             return encData
         } else {
             let currentTimestamp = String(Date().timeIntervalSinceNow)
-            return SHA256(data: currentTimestamp.data(using: .utf8))
+            let encData = SHA256(data: currentTimestamp.data(using: .utf8))
+            UserDefaults.standard.setValue(encData, forKey: type)
+            return encData
         }
     }
     

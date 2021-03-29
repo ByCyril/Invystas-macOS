@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Invysta_Framework
 
 struct IOPlatformExpertDeviceIdentifier: IdentifierSource {
     var type: String = "IOPlatformExpertDevice"

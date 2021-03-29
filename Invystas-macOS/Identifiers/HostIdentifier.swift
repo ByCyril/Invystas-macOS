@@ -6,8 +6,9 @@
 //
 
 import Cocoa
+import Invysta_Framework
 
-final class HostIdentifier: Identifier, IdentifierSource {
+struct HostIdentifier: IdentifierSource {
     var type: String = "HostIdentifier"
     
     let hostName: String = {
