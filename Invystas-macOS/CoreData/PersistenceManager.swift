@@ -7,7 +7,7 @@
 
 import CoreData
 import Foundation
-import Invysta_Framework
+import InvystaCore
 
 final class PersistenceManager {
     

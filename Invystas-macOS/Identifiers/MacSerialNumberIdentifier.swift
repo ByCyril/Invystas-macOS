@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import Invysta_Framework
+import InvystaCore
 
 struct MacSerialNumberIdentifier: IdentifierSource {
     var type: String = "SerialNumber"

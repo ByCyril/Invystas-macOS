@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import Invysta_Framework
+import InvystaCore
 
 class RegisterViewController: NSViewController, NSAlertDelegate {
 

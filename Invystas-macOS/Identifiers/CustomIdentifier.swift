@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Invysta_Framework
+import InvystaCore
 
 struct CustomIdentifier: IdentifierSource {
     

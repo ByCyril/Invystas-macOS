@@ -7,7 +7,7 @@
 
 import IOKit
 import Cocoa
-import Invysta_Framework
+import InvystaCore
 
 struct DeviceModelIdentifier: IdentifierSource {
     var type: String = "DeviceModel"

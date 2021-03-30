@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import Invysta_Framework
+import InvystaCore
 
 struct FirstTimeInstallationIdentifier: IdentifierSource {
     var type: String = "FirstTimeInstallation"

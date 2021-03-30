@@ -6,7 +6,7 @@
 //
 
 import Cocoa
-import Invysta_Framework
+import InvystaCore
 import LocalAuthentication
 
 final class AuthenticationViewController: NSViewController {

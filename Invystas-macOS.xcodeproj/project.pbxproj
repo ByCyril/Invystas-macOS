@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		010553F12569FDF600BA2913 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010553F02569FDF600BA2913 /* BaseViewController.swift */; };
 		011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011AC40625563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift */; };
-		0162F27A26111B9D000F5D41 /* Invysta-Framework in Frameworks */ = {isa = PBXBuildFile; productRef = 0162F27926111B9D000F5D41 /* Invysta-Framework */; };
+		01584C1A2612BAA6005E1366 /* InvystaCore in Frameworks */ = {isa = PBXBuildFile; productRef = 01584C192612BAA6005E1366 /* InvystaCore */; };
 		0162F28026112512000F5D41 /* IVUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F27F26112512000F5D41 /* IVUserDefaults.swift */; };
 		0162F28A261132C2000F5D41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F289261132C2000F5D41 /* RegisterViewController.swift */; };
 		0162F29C26115CC3000F5D41 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162F29B26115CC3000F5D41 /* main.swift */; };
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0162F27A26111B9D000F5D41 /* Invysta-Framework in Frameworks */,
+				01584C1A2612BAA6005E1366 /* InvystaCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +225,7 @@
 			);
 			name = "Invysta Aware";
 			packageProductDependencies = (
-				0162F27926111B9D000F5D41 /* Invysta-Framework */,
+				01584C192612BAA6005E1366 /* InvystaCore */,
 			);
 			productName = "Invystas-macOS";
 			productReference = 01C2F06D2550942300F70488 /* Invysta Aware.app */;
@@ -263,7 +263,7 @@
 			);
 			mainGroup = 01C2F0642550942300F70488;
 			packageReferences = (
-				0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */,
+				01584C182612BAA6005E1366 /* XCRemoteSwiftPackageReference "InvystaCore" */,
 			);
 			productRefGroup = 01C2F06E2550942300F70488 /* Products */;
 			projectDirPath = "";
@@ -578,21 +578,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */ = {
+		01584C182612BAA6005E1366 /* XCRemoteSwiftPackageReference "InvystaCore" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/cgarcia090/Invysta-Framework.git";
+			repositoryURL = "https://github.com/Invysta/InvystaCore.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.3;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0162F27926111B9D000F5D41 /* Invysta-Framework */ = {
+		01584C192612BAA6005E1366 /* InvystaCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0162F27826111B9D000F5D41 /* XCRemoteSwiftPackageReference "Invysta-Framework" */;
-			productName = "Invysta-Framework";
+			package = 01584C182612BAA6005E1366 /* XCRemoteSwiftPackageReference "InvystaCore" */;
+			productName = InvystaCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 
