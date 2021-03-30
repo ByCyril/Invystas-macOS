@@ -58,29 +58,45 @@ class RegisterViewController: NSViewController, NSAlertDelegate {
         
         register?.start { [weak self] results in
             switch results {
-            case .success(_):
+            case .success(let statusCode):
                 IVUserDefaults.set(true, .isExistingUser)
-                self?.showAlert("Done!", "Device is now Invysta Aware!")
-            case .failure(let message, _):
+                self?.saveActivity(message: "Registered Device", statusCode: statusCode)
+                self?.showAlert("Done!", "Device is now Invysta Aware!", true)
+            case .failure(let message, let statusCode):
+                self?.saveActivity(message: message, statusCode: statusCode)
                 self?.showAlert("Error", message)
             }
         }
     }
     
     private func showAlert(_ title: String,_ message: String,_ closeToDismiss: Bool = false) {
-
         DispatchQueue.main.async {
             let alert = NSAlert()
             alert.messageText = title
             alert.informativeText = message
             alert.delegate = self
 
+            
             alert.beginSheetModal(for: self.view.window!) { [weak self] response in
-                if response == .cancel {
-                    self?.dismiss(self)
+                if closeToDismiss {
+                    if response == .cancel {
+                        self?.dismiss(self)
+                    }
                 }
             }
         }
+    }
+    
+    private let coreDataManager: PersistenceManager = PersistenceManager.shared
+    
+    func saveActivity(message: String, statusCode: Int) {
+        let activityManager = ActivityManager(coreDataManager)
+        let activity = Activity(context: coreDataManager.context)
+        activity.date = Date()
+        activity.message = message
+        activity.statusCode = Int16(statusCode)
+        activityManager.saveResults(activity: activity)
+        NotificationCenter.default.post(name: Notification.Name("ReloadTable"), object: nil)
     }
  
 }

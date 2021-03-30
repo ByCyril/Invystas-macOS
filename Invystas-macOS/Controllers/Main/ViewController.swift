@@ -6,21 +6,19 @@
 //
 
 import Cocoa
-import LocalAuthentication
 import Invysta_Framework
 
 final class ViewController: BaseViewController {
-        
+            
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        beginRegistration()
+        if IVUserDefaults.getBool(.isExistingUser) == false {
+            beginRegistration()
+        }
     }
  
     func beginRegistration() {
-
-        if IVUserDefaults.getBool(.isExistingUser) { return }
-        
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Invysta"), bundle: nil)
         let vc = storyboard.instantiateController(withIdentifier: "RegisterViewController") as! RegisterViewController
         presentAsSheet(vc)
@@ -36,4 +34,11 @@ final class ViewController: BaseViewController {
         presentAsSheet(vc)
     }
  
+    
+    @IBAction func reregisterDevice(_ sender: NSButton) {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Invysta"), bundle: nil)
+        let vc = storyboard.instantiateController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        presentAsSheet(vc)
+    }
+    
 }
