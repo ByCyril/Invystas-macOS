@@ -24,9 +24,9 @@ final class ViewController: BaseViewController {
         presentAsSheet(vc)
     }
   
-    func beginAuthentication(_ browserData: InvystaBrowserDataModel) {
+    func beginAuthentication(_ browserData: ProviderModel) {
        
-        let authenticationObject = AuthenticationObject(uid: browserData.uid, nonce: browserData.nonce)
+        let authenticationObject = AuthenticationModel(uid: browserData.uid, nonce: browserData.nonce)
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Invysta"), bundle: nil)
         let vc = storyboard.instantiateController(withIdentifier: "AuthenticationViewController") as! AuthenticationViewController

@@ -34,17 +34,6 @@ final class IVUserDefaults {
             UserDefaults.standard.removeObject(forKey: key.rawValue)
         }
         
-        [AccessibilityIdentifier(),
-         CustomIdentifier(),
-         DeviceModelIdentifier(),
-         FirstTimeInstallationIdentifier(),
-         HostIdentifier(),
-         IOPlatformExpertDeviceIdentifier(),
-         MacSerialNumberIdentifier()
-        ].forEach { (element) in
-            let id = (element as! IdentifierSource).type
-            UserDefaults.standard.removeObject(forKey: id)
-        }
+        LocalIdentifierManager.clearIdentifiers()
     }
 }
-

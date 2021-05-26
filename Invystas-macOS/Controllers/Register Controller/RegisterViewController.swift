@@ -8,7 +8,7 @@
 import Cocoa
 import InvystaCore
 
-class RegisterViewController: NSViewController, NSAlertDelegate {
+class RegisterViewController: NSViewController, NSAlertDelegate, LocalAuthenticationManagerDelegate {
 
     @IBOutlet var emailField: NSTextField!
     @IBOutlet var passwordField: NSSecureTextField!
@@ -18,10 +18,13 @@ class RegisterViewController: NSViewController, NSAlertDelegate {
     @IBOutlet var registerButton: NSButton!
     @IBOutlet var cancelButton: NSButton!
     
-    private var register: Registration?
+    private var process: InvystaProcess<RegistrationModel>?
+    
+    private let localAuth: LocalAuthenticationManager = LocalAuthenticationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        localAuth.delegate = self
         cancelButton.isHidden = IVUserDefaults.getBool(.isExistingUser) == false
     }
     
@@ -30,7 +33,14 @@ class RegisterViewController: NSViewController, NSAlertDelegate {
     }
     
     @IBAction func registerDevice(_ sender: NSButton) {
-        
+        localAuth.beginLocalAuthentication(beginRegistration)
+    }
+    
+    func localAuthenticationDidFail(_ error: Error?) {
+        showAlert("Authentication Failed", error?.localizedDescription ?? "No Error Description Available")
+    }
+    
+    func beginRegistration() {
         guard !emailField.stringValue.isEmpty,
               !passwordField.stringValue.isEmpty,
               !otcField.stringValue.isEmpty,
@@ -40,7 +50,9 @@ class RegisterViewController: NSViewController, NSAlertDelegate {
             return
         }
         
-        let registrationObject = RegistrationObject(email: emailField.stringValue,
+        LocalIdentifierManager.resetIdentifiers()
+        
+        let registrationObject = RegistrationModel(email: emailField.stringValue,
                                                     password: passwordField.stringValue,
                                                     otc: otcField.stringValue)
         
@@ -54,9 +66,9 @@ class RegisterViewController: NSViewController, NSAlertDelegate {
         
         IVUserDefaults.set(providerField.stringValue, .providerKey)
         
-        register = Registration(registrationObject, providerField.stringValue)
+        process = InvystaProcess(registrationObject, providerField.stringValue)
         
-        register?.start { [weak self] results in
+        process?.start { [weak self] results in
             switch results {
             case .success(let statusCode):
                 IVUserDefaults.set(true, .isExistingUser)

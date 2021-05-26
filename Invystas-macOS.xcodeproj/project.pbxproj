@@ -28,6 +28,8 @@
 		01C2F0712550942300F70488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0702550942300F70488 /* AppDelegate.swift */; };
 		01C2F0732550942300F70488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2F0722550942300F70488 /* ViewController.swift */; };
 		01C2F0752550942400F70488 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C2F0742550942400F70488 /* Assets.xcassets */; };
+		01CCAC98265DF33C000AD41E /* LocalAuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE31EF265DEF3A0032ADDB /* LocalAuthenticationManager.swift */; };
+		01CCAC9A265DFA22000AD41E /* LocalIdentifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CCAC99265DF9F7000AD41E /* LocalIdentifierManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		01C2F0742550942400F70488 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C2F0792550942400F70488 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C2F07A2550942400F70488 /* Invystas_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Invystas_macOS.entitlements; sourceTree = "<group>"; };
+		01CCAC99265DF9F7000AD41E /* LocalIdentifierManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIdentifierManager.swift; sourceTree = "<group>"; };
+		01EE31EF265DEF3A0032ADDB /* LocalAuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 				0162F29B26115CC3000F5D41 /* main.swift */,
 				01C2F0702550942300F70488 /* AppDelegate.swift */,
 				0162F27F26112512000F5D41 /* IVUserDefaults.swift */,
+				01EE31EF265DEF3A0032ADDB /* LocalAuthenticationManager.swift */,
+				01CCAC99265DF9F7000AD41E /* LocalIdentifierManager.swift */,
 				016E4F0A261293C600BAA66E /* Controllers */,
 				016E4F09261293B900BAA66E /* CoreData */,
 				018355232568779C00F1D868 /* Identifiers */,
@@ -248,7 +254,6 @@
 					};
 					01C2F06C2550942300F70488 = {
 						CreatedOnToolsVersion = 12.1;
-						DevelopmentTeam = R986STKYJ7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -309,12 +314,14 @@
 			files = (
 				0183552E2568791D00F1D868 /* CustomIdentifier.swift in Sources */,
 				0162F28026112512000F5D41 /* IVUserDefaults.swift in Sources */,
+				01CCAC98265DF33C000AD41E /* LocalAuthenticationManager.swift in Sources */,
 				016E4EFA26127C9700BAA66E /* Model.xcdatamodeld in Sources */,
 				01C2F0732550942300F70488 /* ViewController.swift in Sources */,
 				01C2F0712550942300F70488 /* AppDelegate.swift in Sources */,
 				011AC40725563AD30044980C /* IOPlatformExpertDeviceIdentifier.swift in Sources */,
 				0183553E25687E1200F1D868 /* AccessibilityIdentifier.swift in Sources */,
 				0162F2A4261177A2000F5D41 /* AuthenticationViewController.swift in Sources */,
+				01CCAC9A265DFA22000AD41E /* LocalIdentifierManager.swift in Sources */,
 				016E4EFE26127D3B00BAA66E /* ActivityManager.swift in Sources */,
 				018355312568794300F1D868 /* FirstTimeInstallationIdentifier.swift in Sources */,
 				0162F28A261132C2000F5D41 /* RegisterViewController.swift in Sources */,
@@ -504,8 +511,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R986STKYJ7;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = WC54Z94VC6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Invystas-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,8 +520,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAwareI;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -529,8 +536,8 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = R986STKYJ7;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = WC54Z94VC6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Invystas-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -538,8 +545,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAwareI;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.InvystaTechnologyGroup.InvystaAware;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

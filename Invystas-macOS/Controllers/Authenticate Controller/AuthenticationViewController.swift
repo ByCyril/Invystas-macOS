@@ -9,24 +9,30 @@ import Cocoa
 import InvystaCore
 import LocalAuthentication
 
-final class AuthenticationViewController: NSViewController {
+final class AuthenticationViewController: NSViewController, LocalAuthenticationManagerDelegate {
     
-    private var authenticate: Authenticate?
+    func localAuthenticationDidFail(_ error: Error?) {
+        showAlert(error?.localizedDescription ?? "Failed to Authenticate")
+        showCancelButton()
+    }
+    
+    private var process: InvystaProcess<AuthenticationModel>?
     
     @IBOutlet weak var indicatorLabel: NSTextField!
     @IBOutlet weak var activityIndicator: NSProgressIndicator!
     @IBOutlet weak var cancelButton: NSButton!
     
-    private var error: NSError?
-    let laContext: LAContext = LAContext()
+    private let localAuth: LocalAuthenticationManager = LocalAuthenticationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        localAuth.delegate = self
         activityIndicator.startAnimation(self)
         cancelButton.isHidden = true
     }
     
-    func beginAuthentication(_ authObject: AuthenticationObject) {
+    func beginAuthentication(_ authObject: AuthenticationModel) {
         
         print("")
         print("#################################")
@@ -38,40 +44,11 @@ final class AuthenticationViewController: NSViewController {
         print("#################################")
         print("")
         
-        authenticate = Authenticate(authObject, IVUserDefaults.getString(.providerKey)!)
+        process = InvystaProcess(authObject, IVUserDefaults.getString(.providerKey)!)
         
-        guard IVUserDefaults.getBool(.DeviceSecurity) else {
-            delayAuthenticationProcess()
-            return
-        }
+        localAuth.delegate = self
+        localAuth.beginLocalAuthentication(authenticationProcess)
         
-        if #available(OSX 10.15, *) {
-            if laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometricsOrWatch, error: &error) {
-                authenticateWithDeviceSecurity(.deviceOwnerAuthenticationWithBiometricsOrWatch)
-            } else {
-                authenticateWithDeviceSecurity(.deviceOwnerAuthentication)
-            }
-        } else {
-            authenticateWithDeviceSecurity(.deviceOwnerAuthentication)
-        }
-        
-    }
-    
-    private func authenticateWithDeviceSecurity(_ policy: LAPolicy) {
-        laContext.evaluatePolicy(policy, localizedReason: "Authenticate to begin the Invysta Process") {  [weak self] (success, error) in
-            if success {
-                self?.authenticationProcess()
-            } else {
-                self?.showAlert(error?.localizedDescription ?? "Failed to Authenticate")
-                self?.showCancelButton()
-            }
-        }
-    }
-    
-    private func delayAuthenticationProcess() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.authenticationProcess()
-        }
     }
     
     private func showCancelButton() {
@@ -82,7 +59,7 @@ final class AuthenticationViewController: NSViewController {
     
     private func authenticationProcess() {
         
-        authenticate?.start { [weak self] results in
+        process?.start { [weak self] results in
             switch results {
             case .success(let statusCode):
                 self?.showAlert("Login Successful!")

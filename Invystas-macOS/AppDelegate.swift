@@ -8,18 +8,6 @@
 import Cocoa
 import InvystaCore
 
-struct Mock: IdentifierSource {
-    var type: String
-    
-    init(_ type: String) {
-        self.type = type
-    }
-    
-    func identifier() -> String? {
-        return type
-    }
-}
-
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     var invystaController: NSWindowController?
@@ -55,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
     
-    func process(_ url: URL) -> InvystaBrowserDataModel? {
+    func process(_ url: URL) -> ProviderModel? {
         guard let components = URLComponents(string: url.absoluteString)?.queryItems else { return nil }
         var data = [String: String]()
         
@@ -63,23 +51,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             data[component.name] = component.value
         }
         
-        return InvystaBrowserDataModel(action: data["action"]!,
-                                       uid: data["uid"]!,
-                                       nonce: data["nonce"]!)
+        return ProviderModel(action: data["action"]!,
+                             uid: data["uid"]!,
+                             nonce: data["nonce"]!)
     }
     
     func launchViewController() {
-        
-        IdentifierManager.configure([
-            AccessibilityIdentifier(),
-            CustomIdentifier(),
-            DeviceModelIdentifier(),
-            FirstTimeInstallationIdentifier(),
-            HostIdentifier(),
-            IOPlatformExpertDeviceIdentifier(),
-            MacSerialNumberIdentifier()
-        ])
-        
+        LocalIdentifierManager.configure()
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Invysta"), bundle: nil)
         invystaController = storyboard.instantiateController(withIdentifier: "InvystaWindow") as? NSWindowController
         
